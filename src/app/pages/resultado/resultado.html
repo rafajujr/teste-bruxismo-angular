@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+
+<div class="p-2 flex items-center justify-center mt-1">
+  <div class="row bg-white py-4 rounded-md">
+    <h1 class="text-3xl mb-4 text-center md:text-justify-truncated px-4 py-2 text-blue-700">
+      Obrigado pelas respostas e parabéns pela sua participação!
+    </h1>
+
+    <button class="bg-yellow-600 hover:bg-yellow-900 text-white w-80 py-2 px-4 rounded cursor-pointer" (click)="reset()">
+      Clique para Refazer o Teste
+    </button>
+
+    <h3 class="text-2xl text-blue-700 mt-6 mb-3 text-center font-semibold">
+      Aqui está o seu resultado do seu teste
+    </h3>
+
+
+
+    <mat-card class="example-card mx-4">
+      <mat-card-header>
+        <mat-card-title>Dados pessoais</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="dados mb-2 flex-col text-start px-4">
+          <h6 class="font-semibold">Dados pessoais</h6>
+          <p>Nome: <span>{{user.nome}}</span></p>
+          <p>Idade: <span>{{user.dataDeNascimento}}</span></p>
+          <p>Localização: <span>{{user.estado}} - {{user.cidade}}</span></p>
+          <p>contato: <span>{{user.contato}}</span></p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="flex flex-col lg:flex-row w-full items-center">
+      <mat-card class="example-card mx-4 mt-4 w-100 h-auto">
+        <mat-card-header>
+          <mat-card-title>Qualidade de sono</mat-card-title>
+          <mat-card-subtitle>Teste EPWORTH</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="resposta flex flex-row items-center">
+            <mat-icon class="mat-18 img">nights_stay</mat-icon>
+            <p>{{sono}}</p>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="example-card mx-4 mt-4 w-100 h-auto">
+        <mat-card-header>
+          <mat-card-title>Nível de ansiedade</mat-card-title>
+          <mat-card-subtitle>Questionário de estresse LIPP</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="resposta flex flex-row items-center">
+            <mat-icon class="mat-18">psychology_alt</mat-icon>
+            <p>{{ansiedade}}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="example-card mx-4 mt-4 w-100 h-auto">
+        <mat-card-header>
+          <mat-card-title>Nível de bruxismo</mat-card-title>
+          <mat-card-subtitle>Questionário de estresse LIPP</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="resposta flex flex-row items-center">
+            <mat-icon class="mat-18">sentiment_neutral</mat-icon>
+            <p>{{bruxismo}}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>

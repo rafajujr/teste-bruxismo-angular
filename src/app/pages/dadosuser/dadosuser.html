@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="p-2 flex items-center justify-center mt-1">
+  <div class="row bg-white py-4 rounded-md">
+    <h1 class="text-2xl mb-6 font-semibold text-center md:text-justify-truncated text-blue-800">Digites seu dados</h1>
+    <form action="" [formGroup]="camposForm">
+
+      <div class="col-12 col-md-6 mb-1">
+        <mat-form-field class="w-100">
+          <mat-label>Nome Completo</mat-label>
+          <input
+            matInput
+            placeholder="Digite seu nome completo"
+            formControlName="nome"
+            name="nome"
+            >
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-6 mb-2">
+        <mat-form-field class="w-70">
+          <mat-label>Data de Nascimento</mat-label>
+          <input type="text" matInput mask="00/00/0000" formControlName="dataDeNascimento" name="dataDeNascimento">
+          <mat-hint>DD/MM/AAAA</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-6 mb-1">
+        <mat-form-field class="w-80">
+          <mat-label>Selecione um Estado</mat-label>
+          <mat-select  placeholder="Selecione o Estado" formControlName="estado" name="estado">
+            @for (estado of listaEstados; track estado.id) {
+              <mat-option [value]="estado.nome">{{estado.nome}} - {{estado.sigla}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-6 mb-1">
+        <mat-form-field class="w-80">
+          <mat-label>Selecione sua Cidade</mat-label>
+          <mat-select  placeholder="selecione sua cidade" formControlName="cidade" name="cidade">
+            @for (cidade of listaCidades; track cidade.id) {
+              <mat-option [value]="cidade.nome">{{cidade.nome}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12 col-md-6 mb-1">
+        <mat-form-field class="w-70">
+          <mat-label>Contato</mat-label>
+          <input
+            matInput
+            formControlName="contato"
+            name="contato"
+            mask="(00) 00000-0000"
+            placeholder="(00) 00000-0000"
+            >
+        </mat-form-field>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white w-100 py-2 px-4 rounded cursor-pointer"
+        (click)="iniciarTeste()"
+        >
+        Próximo
+      </button>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

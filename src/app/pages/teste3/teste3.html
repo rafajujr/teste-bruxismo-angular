@@ -1,0 +1,123 @@
+<app-navbar></app-navbar>
+
+<div class="p-2 flex items-center justify-center mt-1">
+  <div class="row bg-white py-4 rounded-md">
+    <h1 class="text-2xl mb-1 font-semibold text-center md:text-justify-truncated text-blue-800">Grau de Bruxismo -
+      Adaptação Zeal</h1>
+    <h3 class="text-lg mb-2 text-center md:text-justify-truncated px-4 flex flex-col text-blue-600">
+      <span class="font-medium text-blue-600 text-xl">Muito bem {{user.nome}}!</span>
+      Agora marque sim, não ou às vezes com base nas últimas semanas
+    </h3>
+    <div class="questions px-4">
+      <form action="" [formGroup]="dados">
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row text-start bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Com frequência você reclama de dor de cabeça, na face, no pescoço ou nos ombros?</p>
+          <mat-radio-group formControlName="valor10" name="valor10" id="valor10">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Se sente cansado ou com algum tipo de desconforto na face ao acordar?</p>
+          <mat-radio-group formControlName="valor1" name="valor1" id="valor1">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Tem dificuldade para drmir? Sono agitado e/ou leve</p>
+          <mat-radio-group formControlName="valor2" name="valor2" id="valor2">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Usa algum medicamento para dormir?</p>
+          <mat-radio-group formControlName="valor3" name="valor3" id="valor3">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Você tem o hábito de apertar ou renger os dentes?</p>
+          <mat-radio-group formControlName="valor4" name="valor4" id="valor4">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Você tem o hábito de consumir café, tabaco ou outro estimulate?</p>
+          <mat-radio-group formControlName="valor5" name="valor5" id="valor5">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Hábito de consumir derivados de glúten e/ou lactose (Ex. pão, leite, etc)</p>
+          <mat-radio-group formControlName="valor6" name="valor6" id="valor6">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col text-start items-start justify-between border-b-1 border-gray-400">
+          <p>Você assiste muita TV e/ou fica no celular, computador ou tablet com frequência?</p>
+          <mat-radio-group formControlName="valor7" name="valor7" id="valor7">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Você é hipertenso ou tem sobrepeso ou usa medicamento para emagrecer?</p>
+          <mat-radio-group formControlName="valor8" name="valor8" id="valor8">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <div
+          class="col-12 md:items-center col-md-6 mb-3 px-5 py-1 flex md:flex-row bg-blue-50 flex-col items-start justify-between border-b-1 border-gray-400">
+          <p>Você se considera uma pessoa tensa, nervosa ou ansiosa?</p>
+          <mat-radio-group formControlName="valor9" name="valor9" id="valor9">
+            @for(opcao of opcoes; track opcao) {
+            <mat-radio-button [value]="opcao">{{opcao}}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white w-100 py-2 px-4 rounded cursor-pointer"
+          (click)="proximo()">
+          Próximo
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
